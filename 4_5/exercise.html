@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Exercício 4.5</title>
+  <style>
+    div {
+      border-color: black;
+      border-style: solid;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .main-content {
+      background-color: yellow;
+    }
+
+    .main-content .center-content {
+      background-color: red;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .main-content .center-content p {
+      font-style: italic;
+    }
+
+    .main-content .left-content {
+      background-color: green;
+      width: 60%;
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .main-content .left-content .small-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 100%;
+    }
+
+    .main-content .right-content {
+      background-color: blue;
+      width: 60%;
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .main-content .description {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    // COLOQUE SEU CÓDIGO AQUI
+    let h1ml = document.createElement('h1');
+    h1ml.innerHTML = 'Exercício 4.5 - JavaScript DOM'
+    document.body.appendChild(h1ml)
+
+    let div1 = document.createElement('div')
+    div1.className = 'main-content'
+    document.body.appendChild(div1)
+
+    let div2 = document.createElement('div');
+    div2.className = 'center-content'
+    div1.appendChild(div2)
+
+    const text = document.createElement('p')
+    text.innerHTML = 'UM TExTo qualquer';
+    div2.appendChild(text)
+
+    const div3 = document.createElement('div')
+    div3.className = 'left-content'
+    div1.appendChild(div3)
+
+    const div4 = document.createElement('div')
+    div4.className = 'right-content'
+    div2.appendChild(div4)
+
+    const img = document.createElement('img');
+    img.src= 'https://picsum.photos/200';
+    img.className = 'small-image'
+    div3.appendChild(img)
+
+    const lista = document.createElement('ul')
+    for(i=0; i <= 10; i++){
+    const li = document.createElement('li')
+      li.innerHTML = i
+      lista.appendChild(li) 
+    }
+    div4.appendChild(lista)
+
+    for(i=0; i < 3; i++){
+
+    let i = document.createElement('h3');
+    i.innerHTML = 'XXXX'
+    div1.appendChild(i)
+    }
+    document.getElementsByTagName('h1').className = 'title'
+    for( i in document.getElementsByTagName('h3')) {
+      document.getElementsByTagName('h3')[i].className = 'description'
+}   
+    const filhoRemov= div1.removeChild(div3);
+
+    div4.style.marginRight = 'auto'
+    
+    div2.style.background ='green'
+    div4.lastElementChild.lastElementChild.remove()
+    div4.lastElementChild.lastElementChild.remove()
+
+
+  </script>
+</body>
+
+</html>

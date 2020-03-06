@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="semantic.min.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+</style>
+
+<body>
+  <form class="ui form">
+    <fieldset class="field">
+      <div class="three fields"></div>
+      <label for="Nome"> Nome : <input name="nome" type="text" maxlength="40" required></label>
+      <label for="Email"> Email :
+        <input name='email' type="email" maxlength="50" required></label>
+      <label for="CPF"> CPF :
+        <input id='cpf' name='CPF' maxlength="11" required></label>
+      <label for="estado">Estado : 
+      <select class='ui fluid dropdown' name="estado" id='estado' name='Estados'></select></label>
+    
+      <label> 
+      <div class="ui radio">
+        <input  id='moradia1' name='moradia' type="radio" value="Casa"> Casa
+        <input id='moradia2' name='moradia' type="radio" value="Apartamento"> Apartamento
+      </div>
+    </label>
+    </fieldset>
+    <fieldset class="field">
+      <div class="field">
+      <label>Resumo do currículo : 
+        <textarea type="text" id="" maxlength="1000" required></textarea></label>
+      </div>
+      <label>Cargo : 
+        <input type="text" id="cargo" maxlength="40" required></label>
+      <label for="descricao">Descricação do Cargo :
+        <input type="text" id="descricao" maxlength="500" required></label>
+      <label for="">Data de Início :
+        <input type="date" name="" id="data"></label>
+      <button class="ui button green" type="submit">preventDefault()</button>
+      <button class="ui button red" id='limpar' type="reset">Limpar</button>
+        <div id="consolidado"></div>
+    </fieldset>
+  </form>
+  <script src="script.js"></script>
+</body>
+
+</html>

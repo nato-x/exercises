@@ -1,0 +1,29 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{
+  margin: 0px;
+  background-color: black;
+  color: aliceblue;
+}
+h2, h1 {
+  text-align: center;
+}
+
+header, footer {
+  text-align: center;
+  background-color: royalblue;
+  border: 5px solid darkslateblue;
+  margin: 0px;
+}
+header > p, footer > p {
+  font-size: 25px;
+  color: crimson;
+}
+p {
+  font-size:20px;
+  margin: 5px;
+}

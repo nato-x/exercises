@@ -1,14 +1,17 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
-body{
+
+body {
   margin: 0px;
   background-color: black;
   color: aliceblue;
 }
+
 h2, h1 {
   text-align: center;
 }
@@ -19,11 +22,33 @@ header, footer {
   border: 5px solid darkslateblue;
   margin: 0px;
 }
-header > p, footer > p {
+
+header>p, footer>p {
   font-size: 25px;
   color: crimson;
 }
+
 p {
-  font-size:20px;
+  font-size: 20px;
   margin: 5px;
+}
+nav > ul  {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+nav > ul > li {
+  border: 2px solid darkslateblue;
+  padding: 2px;
+  border-radius: 5px;
+}
+@media screen and (min-width: 600px) {
+  aside {
+    display: inline-flex;
+    flex-flow: column;
+  }
+
+  p {
+    margin: 20px;
+  }
 }

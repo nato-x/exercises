@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-
 import {connect} from 'react-redux'
+import { submitReducer } from './reducers'
+import { submitForms } from './actions';
 
 const states = ['Rio de Janeiro', 'Minas Gerais', 'Amapá', 'Amazonas', 'São Paulo', 'Ceará', 'Distrito Federal'];
 
@@ -43,13 +44,7 @@ class Form extends Component {
     this.updateState(name, value)
     }
     updateState(name, value) {
-      this.setState((state) => ({
-        [name]: value,
-        formErrors: {
-          ...state.formErrors,
-          [name]: this.validateField(name, value)
-        }
-      }));
+      this.props.form[name] = value
       }
   render() {
     return (
@@ -63,7 +58,7 @@ class Form extends Component {
             name="name"
             maxLength="40"
             required
-            value={this.state.name}
+            value={this.props.name}
             onChange={this.changeHandler}
           />
         </div>
@@ -74,7 +69,7 @@ class Form extends Component {
             name="email"
             maxLength="50"
             required
-            value={this.state.email}
+            value={this.props.email}
             onChange={this.changeHandler}
           />
         </div>
@@ -85,7 +80,7 @@ class Form extends Component {
             name="cpf"
             maxLength="11"
             required
-            value={this.state.cpf}
+            value={this.props.cpf}
             onChange={this.changeHandler}
           />
         </div>
@@ -96,7 +91,7 @@ class Form extends Component {
             name="address"
             maxLength="200"
             required
-            value={this.state.address}
+            value={this.props.address}
             onChange={this.changeHandler}
           />
         </div>
@@ -107,7 +102,7 @@ class Form extends Component {
             name="city"
             maxLength="28"
             required
-            value={this.state.city}
+            value={this.props.city}
             onBlur={this.onBlurHandler}
             onChange={this.changeHandler}
           />
@@ -117,7 +112,7 @@ class Form extends Component {
           <select
             name="countryState"
             required
-            value={this.state.countryState}
+            value={this.props.countryState}
             onChange={this.changeHandler}
           >
               {states.map((value, key) =>
@@ -135,7 +130,7 @@ class Form extends Component {
               name="resume"
               maxLength="1000"
               required
-              value={this.state.resume}
+              value={this.props.resume}
               onChange={this.changeHandler}
             />
           </div>
@@ -146,7 +141,7 @@ class Form extends Component {
               name="role"
               maxLength="40"
               required
-              value={this.state.role}
+              value={this.props.role}
               onChange={this.changeHandler}
               onMouseEnter={() => {
                 alert('Preencha com cuidado esta informação.');
@@ -158,7 +153,7 @@ class Form extends Component {
             <textarea
               name="roleDescription"
               maxLength="500"
-              value={this.state.roleDescription}
+              value={this.props.roleDescription}
               onChange={this.changeHandler}
             />
           </div>
@@ -168,4 +163,8 @@ class Form extends Component {
     )
   }
 }
-default export connect(null, mapDispatchToProps)(Form)
+
+const mapDispatchToProps = (dispatch) => {
+  form: (form) => dispatch(submitForms(form))
+}
+export default connect(null, mapDispatchToProps)(Form)

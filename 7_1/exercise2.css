@@ -1,0 +1,86 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0px;
+  background-color: black;
+  color: aliceblue;
+}
+
+h2, h1 {
+  text-align: center;
+}
+
+header, footer {
+  text-align: center;
+  background-color: royalblue;
+  border: 5px solid darkslateblue;
+  margin: 0px;
+}
+
+header>p, footer>p {
+  font-size: 25px;
+  color: crimson;
+}
+
+p {
+  font-size: 20px;
+  margin: 5px;
+}
+nav > ul  {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+nav > ul > li {
+  border: 2px solid darkslateblue;
+  padding: 2px;
+  border-radius: 5px;
+}
+@media screen and (min-width: 600px) and (max-width:1200px) {
+  aside {
+    display: inline-flex;
+    flex-flow: column;
+  }
+  li{
+    font-size: 1.2em;
+  }
+  p {
+    margin: 20px;
+    font-size: 1.5em;
+  }
+}
+@media screen and (min-width:1200px){
+  aside {
+    display: inline-flex;
+    flex-flow: column;
+    width: 48%;
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+    margin: -16 px;
+  }
+  li{
+    font-size: 1.2em;
+  }
+  
+  h2{
+    margin-left:16px }
+  div.info{
+    display: inline;
+  }
+  article{
+    width: 80%;
+    margin: auto;
+  }
+  p {
+    margin: 30px;
+    font-size: 1.5em;
+  }
+}

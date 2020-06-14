@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.centro {
+  width: 90%;
+  height: 100%;
+  background: grey;
+  margin: 0 auto;  
+}
+.topo {
+  height: 15%;
+  background: purple;
+}
+.topo h1{
+  color: aquamarine;
+  font: 2em;
+}
+
+@media screen and (min-width: 320px) and (max-width:568px){
+ .centro{
+   width: 100%;
+ } 
+ .topo{
+   background: royalblue;
+    color: crimson;   
+ }
+}
